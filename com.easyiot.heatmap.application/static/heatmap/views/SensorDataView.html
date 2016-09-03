@@ -1,0 +1,29 @@
+<div class="w3-responsive">
+	<div class="w3-container w3-blue">
+		<h2>Search</h2>
+	</div>
+	<input class="w3-input" type="text" ng-model="searchTxt">
+	<div class="w3-container w3-blue">
+		<h2>Sensors</h2>
+	</div>
+	<!-- Get a scroll bar -->
+	<div style="height: 325px; overflow: auto;">
+		<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable">
+			<tr class="w3-blue-grey">
+				<th>Index</th>
+				<th ng-click="orderByHeader('name')">Name</th>
+				<th ng-click="orderByHeader('temperature')">Temperature</th>
+			</tr>
+			<tr
+				ng-repeat="data in sensorData | filter : searchTxt | orderBy:orderByStr : isReverse"
+				ng-class="{'w3-red': data.sensorNormalized> 0.8, 
+				   'w3-lime': data.sensorNormalized < 0.8 && data.sensorNormalized > 0.3,
+				   'w3-green': data.sensorNormalized < 0.8}"
+				ng-click="centerSensor(data)">
+				<td>{{$index + 1}}</td>
+				<td>{{data.name}}</td>
+				<td>{{data.temperature | number:2}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

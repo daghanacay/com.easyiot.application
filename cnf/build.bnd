@@ -1,0 +1,17 @@
+#
+# This file is left open for you to define your macros
+#
+-plugin.1.easyiot.core = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Core; \
+	        locations	=       file:///home/daghan/git/com.easyiot.core/cnf/release/index.xml
+
+-plugin.2.easyiot.protocol = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Protocol; \
+	        locations	=       file:///home/daghan/git/com.easyiot.protocol/cnf/release/index.xml
+
+-plugin.3.easyiot.device = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Device; \
+	        locations	=       file:///home/daghan/git/com.easyiot.device/cnf/release/index.xml

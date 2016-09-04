@@ -26,13 +26,11 @@ JPM-Command:			heatmap
 -buildpath: \
 	osgi.enroute.base.api,\
 	com.easyiot.base.api,\
-	com.easyiot.lora.device.api
+	com.easyiot.lora.device.api,\
+	com.easyiot.lora.device.provider
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
--runrequires: \
-	osgi.identity;filter:='(osgi.identity=com.easyiot.heatmap.application)',\
-	osgi.identity;filter:='(&(osgi.identity=com.easyiot.lora.device.provider)(version>=1.0.0))'
 -runee: JavaSE-1.8
 -runfw: org.eclipse.osgi
 Export-Package: \

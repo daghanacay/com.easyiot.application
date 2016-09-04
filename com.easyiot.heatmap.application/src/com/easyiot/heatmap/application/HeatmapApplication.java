@@ -9,6 +9,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
+import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.capability.WebSecurity.RequireWebSecurity;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
@@ -21,6 +22,7 @@ import osgi.enroute.rest.api.REST;
 import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
+@RequireDeviceRest(versionStr="1.0.0")
 @RequireWebSecurity(versionStr="1.0.0")
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
@@ -32,7 +34,7 @@ public class HeatmapApplication implements REST {
 	private DeviceExecutorService rm;
 	// List of lora sensors see configuration/configuration.json
 	@Reference(target = "(service.factoryPid=com.easyiot.device.lora.device)")
-	List<Device> loraSensors;
+	volatile List<Device> loraSensors;
 
 	private DataConverter converter = new DataConverter();
 

@@ -12,6 +12,7 @@ JPM-Command:					heatmap
 
 
 -runbundles: \
+	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.heatmap.application;version=snapshot,\

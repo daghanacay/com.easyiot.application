@@ -58,7 +58,7 @@
   {
      "service.factoryPid":"com.easyiot.mqtt.protocol.provider",
      "service.pid":"mqtt.pid",
-     "host":"lora.staging.mqtt",
+     "id":"lora.staging.mqtt",
      "host":"staging.thethingsnetwork.org",
      "port":"1883",
      "username":"70B3D57ED0000185",

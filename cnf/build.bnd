@@ -3,6 +3,22 @@
 #
 -plugin.1.easyiot.core = \
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Core-Github; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.core/master/cnf/release/index.xml
+
+-plugin.1.easyiot.protocol = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Protocol-Github; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.protocol/master/cnf/release/index.xml
+
+-plugin.1.easyiot.device = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Device-Github; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.device/master/cnf/release/index.xml
+
+
+-plugin.2.easyiot.core = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
 	        name		=       EasyIot-Core; \
 	        locations	=       file:///home/daghan/git/com.easyiot.core/cnf/release/index.xml
 
@@ -11,7 +27,7 @@
 	        name		=       EasyIot-Protocol; \
 	        locations	=       file:///home/daghan/git/com.easyiot.protocol/cnf/release/index.xml
 
--plugin.3.easyiot.device = \
+-plugin.2.easyiot.device = \
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \
 	        name		=       EasyIot-Device; \
 	        locations	=       file:///home/daghan/git/com.easyiot.device/cnf/release/index.xml

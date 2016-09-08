@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<repository increment="1473334608000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.easyiot.heatmap.application"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.0.0.201609060956"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="de91dea1c35841e4fec8cb3bbe9d255ed2f638513576907ccfe35254c5964d76"/>
+      <attribute name="url" value="com.easyiot.heatmap.application/com.easyiot.heatmap.application-1.0.0.jar"/>
+      <attribute name="size" type="Long" value="711300"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.easyiot.base.api"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.easyiot.base.executor"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <directive name="uses" value="com.easyiot.base.api,com.easyiot.base.api.exception"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.easyiot.base.api.exception"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.easyiot.lora.device.api.dto"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <directive name="uses" value="org.osgi.dto"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="osgi.enroute.rest.api.REST"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="osgi.enroute.rest.api.REST"/>
+      <directive name="uses" value="osgi.enroute.rest.api"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.easyiot.base.api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.easyiot.base.api.exception)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.easyiot.base.executor)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.easyiot.lora.device.api.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=osgi.enroute.rest.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=com.easyiot.base.api.Device)"/>
+      <directive name="effective" value="active"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=com.easyiot.base.executor.DeviceExecutorService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="com.easyiot">
+      <attribute name="versionStr" value="1.0.0"/>
+      <directive name="filter" value="(&amp;(com.easyiot=device-rest)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="com.easyiot">
+      <attribute name="versionStr" value="1.0.0"/>
+      <directive name="filter" value="(&amp;(com.easyiot=https_security)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="com.easyiot">
+      <attribute name="versionStr" value="1.0.0"/>
+      <directive name="filter" value="(&amp;(com.easyiot=lora_device)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.enroute.webresource">
+      <attribute name="resource" type="List&lt;String&gt;" value="angular.js,angular-resource.js,angular-route.js"/>
+      <attribute name="priority" type="Long" value="1000"/>
+      <directive name="filter" value="(&amp;(osgi.enroute.webresource=/google/angular)(&amp;(version&gt;=1.4.4)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.enroute.webresource">
+      <attribute name="resource" type="List&lt;String&gt;" value="css/bootstrap.css"/>
+      <attribute name="priority" type="Long" value="1000"/>
+      <directive name="filter" value="(&amp;(osgi.enroute.webresource=/twitter/bootstrap)(&amp;(version&gt;=3.3.5)(!(version&gt;=4.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <attribute name="configuration_loc" value="configuration/configuration.json"/>
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.enroute.configurer)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.enroute.webserver)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=com.easyiot.base.api.Device)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=com.easyiot.base.executor.DeviceExecutorService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+</repository>

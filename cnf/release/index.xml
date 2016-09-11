@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1473334608000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1473595085000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.easyiot.heatmap.application"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="version" type="Version" value="1.0.0.201609111157"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="de91dea1c35841e4fec8cb3bbe9d255ed2f638513576907ccfe35254c5964d76"/>
+      <attribute name="osgi.content" value="6ddb3897ec90043ece7a35e9fef437b5c48dfe5042cdb8b3f3bd6fb77887d2d8"/>
       <attribute name="url" value="com.easyiot.heatmap.application/com.easyiot.heatmap.application-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="711300"/>
+      <attribute name="size" type="Long" value="711297"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="com.easyiot.base.api"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="com.easyiot.base.executor"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
       <directive name="uses" value="com.easyiot.base.api,com.easyiot.base.api.exception"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="com.easyiot.base.api.exception"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="com.easyiot.lora.device.api.dto"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201609060956"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201609111157"/>
       <directive name="uses" value="org.osgi.dto"/>
     </capability>
     <capability namespace="osgi.service">

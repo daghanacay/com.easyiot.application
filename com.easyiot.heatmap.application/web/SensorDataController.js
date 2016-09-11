@@ -1,5 +1,5 @@
 app.controller("SensorDataController", [ '$scope', function($scope) {
-    $scope.$parent.mapHeight = "480px";
+    $scope.$parent.mapHeight = "200px";
     // Function to center the map on the selected sensor and create marker at
     // the selected location
     $scope.centerSensor = function(sensorData) {

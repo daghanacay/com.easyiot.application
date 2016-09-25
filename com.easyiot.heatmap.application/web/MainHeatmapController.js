@@ -9,7 +9,7 @@ app
 			function($scope, $http, $interval) {
 			    $scope.$on('$routeChangeStart', function(event,
 				    next, current) {
-				$scope.mapHeight = "950px";
+				$scope.mapHeight = "500px";
 			    });
 
 			    $interval(function() {

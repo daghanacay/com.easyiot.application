@@ -12,12 +12,14 @@ JPM-Command:					heatmap
 
 
 -runbundles: \
+	com.easyiot.auslora.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.heatmap.application;version=snapshot,\
 	com.easyiot.lora.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)',\
 	org.apache.felix.configadmin;version='[1.8.6,1.8.7)',\
 	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
 	org.apache.felix.http.jetty;version='[3.1.0,3.1.1)',\

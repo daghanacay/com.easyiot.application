@@ -7,6 +7,7 @@ import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.easyiot.auslora.device.api.dto.AusloraDataDTO;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
@@ -22,8 +23,8 @@ import osgi.enroute.rest.api.REST;
 import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
-@RequireDeviceRest(versionStr="1.0.0")
-@RequireWebSecurity(versionStr="1.0.0")
+@RequireDeviceRest(versionStr = "1.0.0")
+@RequireWebSecurity(versionStr = "1.0.0")
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender
@@ -32,21 +33,32 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 public class HeatmapApplication implements REST {
 	@Reference
 	private DeviceExecutorService rm;
+	
 	// List of lora sensors see configuration/configuration.json
 	@Reference(target = "(service.factoryPid=com.easyiot.device.lora.device)")
 	volatile List<Device> loraSensors;
+
+	@Reference(target = "(service.factoryPid=com.easyiot.auslora.device)")
+	volatile List<Device> ausloraSensors;
 
 	private DataConverter converter = new DataConverter();
 
 	public List<AppSensorDataDTO> getSensorData()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
 		List<AppSensorDataDTO> returnVal = new ArrayList<>();
-		SensorDataDTO sensorData;
- 		for (Device loraSensor : loraSensors) {
-			sensorData = rm.activateResource(loraSensor.getId(), null, SensorDataDTO.class,
+		SensorDataDTO loraSensorData;
+		for (Device loraSensor : loraSensors) {
+			loraSensorData = rm.activateResource(loraSensor.getId(), null, SensorDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter.convert(loraSensor.getId(), sensorData));
+			returnVal.add(converter.convert(loraSensor.getId(), loraSensorData));
 		}
+		AusloraDataDTO ausloraSensorData;
+		for (Device ausloraSensor : ausloraSensors) {
+			ausloraSensorData = rm.activateResource(ausloraSensor.getId(), null, AusloraDataDTO.class,
+					DeviceExecutorMethodTypeEnum.GET);
+			returnVal.add(converter.convert(ausloraSensor.getId(), ausloraSensorData));
+		}
+
 		return returnVal;
 	}
 

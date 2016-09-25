@@ -21,21 +21,18 @@ JPM-Command:			heatmap
 
 -buildpath: \
 	com.easyiot.base.api,\
+	osgi.enroute.base.api,\
 	com.easyiot.lora.device.api,\
-	osgi.enroute.base.api
+	com.easyiot.auslora.device.api
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
 -runee: JavaSE-1.8
 -runfw: org.eclipse.osgi
-Export-Package: \
-	com.easyiot.base.api,\
-	com.easyiot.base.executor,\
-	com.easyiot.base.api.exception,\
-	com.easyiot.lora.device.api.dto
 -runbundles: \
+	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.heatmap.application;version=snapshot,\
+	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.lora.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	org.apache.felix.configadmin;version='[1.8.6,1.8.7)',\
@@ -51,6 +48,7 @@ Export-Package: \
 	org.fusesource.hawtdispatch.hawtdispatch;version='[1.22.0,1.22.1)',\
 	org.fusesource.hawtdispatch.hawtdispatch-transport;version='[1.22.0,1.22.1)',\
 	org.fusesource.mqtt-client.mqtt-client;version='[1.14.0,1.14.1)',\
+	org.knopflerfish.bundle.useradmin;version='[4.1.1,4.1.2)',\
 	org.osgi.service.event;version='[1.3.1,1.3.2)',\
 	org.osgi.service.metatype;version='[1.3.0,1.3.1)',\
 	osgi.enroute.configurer.simple.provider;version='[1.2.2,1.2.3)',\
@@ -60,4 +58,8 @@ Export-Package: \
 	osgi.enroute.logger.simple.provider;version='[1.1.1,1.1.2)',\
 	osgi.enroute.rest.simple.provider;version='[2.0.2,2.0.3)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
-	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)'
+	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)',\
+	com.easyiot.auslora.device.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.heatmap.application;version=snapshot,\
+	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)'
+-runrequires: osgi.identity;filter:='(osgi.identity=com.easyiot.heatmap.application)'

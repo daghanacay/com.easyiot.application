@@ -70,6 +70,21 @@
      "port":"1883",
      "username":"70B3D57ED0000185",
      "userPassword":"vjGkwZGzSGSkhzMawoXv59f84oGjeYHX0mBbC1c7Yq0="
+  },
+  {
+  	 "service.factoryPid":"com.easyiot.auslora.device",
+     "service.pid":"pid.auslora.sensor1",
+     "wsProtocolReference.target" : "(id=auslora.ws)",
+     "id":"auslora.sensor1",
+  	 "applicationId":"BE01000C",
+  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug"
+  },
+  {
+     "service.factoryPid":"com.easyiot.websocket.protocol",
+     "service.pid":"ws.pid",
+     "id":"auslora.ws",
+     "protocol":"wss",
+     "host":"nwk.auslora.com.au",
+     "port":"80"
   }
-
 ]

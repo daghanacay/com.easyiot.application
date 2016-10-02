@@ -18,51 +18,6 @@
      "publishChannel":"70B3D57ED0000185/devices/0000000001020304/up"
   },
   {
-     "service.factoryPid":"com.easyiot.device.lora.device",
-     "service.pid":"pid.sensor2",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"simulatedSensor2",
-     "name":"simulatedSensor2",
-     "subscriptionChannel":"70B3D57ED0000185/devices/0000000002030405/up",
-     "publishChannel":"70B3D57ED0000185/devices/0000000002030405/up"
-  },
-  {
-     "service.factoryPid":"com.easyiot.device.lora.device",
-     "service.pid":"pid.sensor3",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"sensor3",
-     "name":"sensor3",
-     "subscriptionChannel":"N/A",
-     "publishChannel":"N/A"
-  },
-  {
-     "service.factoryPid":"com.easyiot.device.lora.device",
-     "service.pid":"pid.sensor4",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"sensor4",
-     "name":"sensor4",
-     "subscriptionChannel":"N/A",
-     "publishChannel":"N/A"
-  },
-  {
-     "service.factoryPid":"com.easyiot.device.lora.device",
-     "service.pid":"pid.sensor5",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"sensor5",
-     "name":"sensor5",
-     "subscriptionChannel":"N/A",
-     "publishChannel":"N/A"
-  },
-  {
-     "service.factoryPid":"com.easyiot.device.lora.device",
-     "service.pid":"pid.sensor6",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"sensor6",
-     "name":"sensor6",
-     "subscriptionChannel":"N/A",
-     "publishChannel":"N/A"
-  },
-  {
      "service.factoryPid":"com.easyiot.mqtt.protocol.provider",
      "service.pid":"mqtt.pid",
      "id":"lora.staging.mqtt",

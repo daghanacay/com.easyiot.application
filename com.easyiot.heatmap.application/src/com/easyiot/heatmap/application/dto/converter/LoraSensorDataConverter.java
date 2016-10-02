@@ -1,10 +1,11 @@
-package com.easyiot.heatmap.application.dto;
+package com.easyiot.heatmap.application.dto.converter;
 
 import com.easyiot.auslora.device.api.dto.AusloraDataDTO;
+import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
 import com.easyiot.lora.device.api.dto.MetaDataDTO;
 import com.easyiot.lora.device.api.dto.SensorDataDTO;
 
-public class DataConverter {
+public class LoraSensorDataConverter {
 	// Converts the data coming from sensor to application DTO that will be sent
 	// to front end. Does not clone the values so input value should be
 	// immutable.
@@ -38,14 +39,5 @@ public class DataConverter {
 	private double normalizeData(double temperature) {
 		return (temperature + 20) / 120;
 	}
-
-	public AppSensorDataDTO convert(String name, AusloraDataDTO ausloraSensorDevice) {
-		AppSensorDataDTO returnval = new AppSensorDataDTO();
-		returnval.name = name;
-		// returnval.longitude = 144.9633200;
-		// returnval.latitude = -37.8140000;
-		returnval.temperature = Double.valueOf(ausloraSensorDevice.data);
-		returnval.sensorNormalized = normalizeData(returnval.temperature);
-		return returnval;
-	}
+	
 }

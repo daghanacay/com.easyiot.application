@@ -8,7 +8,8 @@ Bundle-Description: \
 
 Private-Package: \
 	com.easyiot.heatmap.application,\
-	com.easyiot.heatmap.application.dto
+	com.easyiot.heatmap.application.dto,\
+	com.easyiot.heatmap.application.dto.converter
 
 EnRoute-Application: 	com.easyiot.heatmap
 JPM-Command:			heatmap
@@ -21,9 +22,9 @@ JPM-Command:			heatmap
 
 -buildpath: \
 	com.easyiot.base.api,\
-	osgi.enroute.base.api,\
 	com.easyiot.lora.device.api,\
-	com.easyiot.auslora.device.api
+	com.easyiot.auslora.device.provider,\
+	osgi.enroute.base.api
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12

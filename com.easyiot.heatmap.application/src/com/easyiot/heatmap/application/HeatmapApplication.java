@@ -14,7 +14,8 @@ import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.capability.WebSecurity.RequireWebSecurity;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
-import com.easyiot.heatmap.application.dto.DataConverter;
+import com.easyiot.heatmap.application.dto.converter.AusloraSensorConverter;
+import com.easyiot.heatmap.application.dto.converter.LoraSensorDataConverter;
 import com.easyiot.lora.device.api.dto.SensorDataDTO;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
@@ -41,7 +42,8 @@ public class HeatmapApplication implements REST {
 	@Reference(target = "(service.factoryPid=com.easyiot.auslora.device)")
 	volatile List<Device> ausloraSensors;
 
-	private DataConverter converter = new DataConverter();
+	private LoraSensorDataConverter converter = new LoraSensorDataConverter();
+	private AusloraSensorConverter converter2 = new AusloraSensorConverter();
 
 	public List<AppSensorDataDTO> getSensorData()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
@@ -56,7 +58,7 @@ public class HeatmapApplication implements REST {
 		for (Device ausloraSensor : ausloraSensors) {
 			ausloraSensorData = rm.activateResource(ausloraSensor.getId(), null, AusloraDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter.convert(ausloraSensor.getId(), ausloraSensorData));
+			returnVal.add(converter2.convert(ausloraSensor.getId(), ausloraSensorData));
 		}
 
 		return returnVal;

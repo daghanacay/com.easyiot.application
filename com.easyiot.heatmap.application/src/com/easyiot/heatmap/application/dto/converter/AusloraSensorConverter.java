@@ -1,18 +1,17 @@
 package com.easyiot.heatmap.application.dto.converter;
 
-import com.easyiot.auslora.device.api.dto.AusloraDataDTO;
-import com.easyiot.auslora.device.api.dto.sensor.SensorDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
 
 public class AusloraSensorConverter {
-	public AppSensorDataDTO convert(String name, AusloraDataDTO ausloraSensorDevice) {
+	public AppSensorDataDTO convert(String name, com.easyiot.auslora.device.api.dto.SensorDataDTO ausloraSensorDevice) {
 		AppSensorDataDTO returnval = new AppSensorDataDTO();
-		SensorDataDTO sensorData = ausloraSensorDevice.sensorData;
+
 		returnval.name = name;
-		returnval.longitude = getLongitude(sensorData.longitude);
-		returnval.latitude = getLatitude(sensorData.latitude);
-		
+		returnval.longitude = getLongitude(ausloraSensorDevice.longitude);
+		returnval.latitude = getLatitude(ausloraSensorDevice.latitude);
+
 		// No heat info on this sensor
+
 		returnval.temperature = 50;
 		returnval.sensorNormalized = .5;
 		return returnval;

@@ -7,7 +7,6 @@ import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import com.easyiot.auslora.device.api.dto.AusloraDataDTO;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
@@ -34,7 +33,7 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 public class HeatmapApplication implements REST {
 	@Reference
 	private DeviceExecutorService rm;
-	
+
 	// List of lora sensors see configuration/configuration.json
 	@Reference(target = "(service.factoryPid=com.easyiot.device.lora.device)")
 	volatile List<Device> loraSensors;
@@ -54,10 +53,10 @@ public class HeatmapApplication implements REST {
 					DeviceExecutorMethodTypeEnum.GET);
 			returnVal.add(converter.convert(loraSensor.getId(), loraSensorData));
 		}
-		AusloraDataDTO ausloraSensorData;
+		com.easyiot.auslora.device.api.dto.SensorDataDTO ausloraSensorData;
 		for (Device ausloraSensor : ausloraSensors) {
-			ausloraSensorData = rm.activateResource(ausloraSensor.getId(), null, AusloraDataDTO.class,
-					DeviceExecutorMethodTypeEnum.GET);
+			ausloraSensorData = rm.activateResource(ausloraSensor.getId(), null,
+					com.easyiot.auslora.device.api.dto.SensorDataDTO.class, DeviceExecutorMethodTypeEnum.GET);
 			returnVal.add(converter2.convert(ausloraSensor.getId(), ausloraSensorData));
 		}
 

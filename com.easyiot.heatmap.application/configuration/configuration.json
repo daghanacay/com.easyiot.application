@@ -1,45 +1,27 @@
 [
   {
-     "service.factoryPid":"com.easyiot.device.lora.device",
+     "service.factoryPid":"com.easyiot.auslora.device",
      "service.pid":"pid.sensor0",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"realSensor",
-     "name":"realSensor",
-     "subscriptionChannel":"70B3D57ED0000185/devices/0000000011223344/up",
-     "publishChannel":"70B3D57ED0000185/devices/0000000011223344/up"
+     "id":"device.with.gps",
+     "auslorawsProtocolReference.target":"(id=real.auslora.wss)",
+     "applicationId":"BE01000C",
+  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
+  	 "deviceEUI":"000DB5311773356B"
   },
   {
      "service.factoryPid":"com.easyiot.device.lora.device",
      "service.pid":"pid.sensor1",
-     "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
-     "id":"simulatedSensor1",
-     "name":"simulatedSensor1",
-     "subscriptionChannel":"70B3D57ED0000185/devices/0000000001020304/up",
-     "publishChannel":"70B3D57ED0000185/devices/0000000001020304/up"
+     "id":"device.development.board",
+     "auslorawsProtocolReference.target":"(id=real.auslora.wss)",
+     "applicationId":"BE01000C",
+  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
+  	 "deviceEUI":"000DB531176F3557"
   },
   {
-     "service.factoryPid":"com.easyiot.mqtt.protocol.provider",
-     "service.pid":"mqtt.pid",
-     "id":"lora.staging.mqtt",
-     "host":"staging.thethingsnetwork.org",
-     "port":"1883",
-     "username":"70B3D57ED0000185",
-     "userPassword":"vjGkwZGzSGSkhzMawoXv59f84oGjeYHX0mBbC1c7Yq0="
-  },
-  {
-  	 "service.factoryPid":"com.easyiot.auslora.device",
-     "service.pid":"pid.auslora.sensor1",
-     "wsProtocolReference.target" : "(id=auslora.ws)",
-     "id":"auslora.sensor1",
-  	 "applicationId":"BE01000C",
-  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug"
-  },
-  {
-     "service.factoryPid":"com.easyiot.websocket.protocol",
-     "service.pid":"ws.pid",
-     "id":"auslora.ws",
-     "protocol":"wss",
+     "service.factoryPid":"com.easyiot.auslora-websocket.protocol",
+     "service.pid":"auslora.wss.pid",
+     "id":"real.auslora.wss",
      "host":"nwk.auslora.com.au",
      "port":"80"
-  }
+  }  
 ]

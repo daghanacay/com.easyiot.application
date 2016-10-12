@@ -7,15 +7,16 @@ import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.capability.WebSecurity.RequireWebSecurity;
 import com.easyiot.base.executor.DeviceExecutorService;
+import com.easyiot.development.board1.device.api.dto.DevelopmentBoard1DeviceDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
-import com.easyiot.heatmap.application.dto.converter.AusloraSensorConverter;
-import com.easyiot.heatmap.application.dto.converter.LoraSensorDataConverter;
-import com.easyiot.lora.device.api.dto.SensorDataDTO;
+import com.easyiot.heatmap.application.dto.converter.DevelopmentBoardSensorDataConverter;
+import com.easyiot.heatmap.application.dto.converter.LT100HSensorConverter;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.google.angular.capabilities.RequireAngularWebResource;
@@ -41,23 +42,23 @@ public class HeatmapApplication implements REST {
 	@Reference(target = "(service.factoryPid=com.easyiot.auslora.device)")
 	volatile List<Device> ausloraSensors;
 
-	private LoraSensorDataConverter converter = new LoraSensorDataConverter();
-	private AusloraSensorConverter converter2 = new AusloraSensorConverter();
+	private DevelopmentBoardSensorDataConverter converter = new DevelopmentBoardSensorDataConverter();
+	private LT100HSensorConverter converter2 = new LT100HSensorConverter();
 
 	public List<AppSensorDataDTO> getSensorData()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
 		List<AppSensorDataDTO> returnVal = new ArrayList<>();
-		SensorDataDTO loraSensorData;
+		DevelopmentBoard1DeviceDataDTO devBoardSensorData;
 		for (Device loraSensor : loraSensors) {
-			loraSensorData = rm.activateResource(loraSensor.getId(), null, SensorDataDTO.class,
+			devBoardSensorData = rm.activateResource(loraSensor.getId(), null, DevelopmentBoard1DeviceDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter.convert(loraSensor.getId(), loraSensorData));
+			returnVal.add(converter.convert(loraSensor.getId(), devBoardSensorData));
 		}
-		com.easyiot.auslora.device.api.dto.SensorDataDTO ausloraSensorData;
+		LT100HSensorDataDTO lt100hSensorData;
 		for (Device ausloraSensor : ausloraSensors) {
-			ausloraSensorData = rm.activateResource(ausloraSensor.getId(), null,
-					com.easyiot.auslora.device.api.dto.SensorDataDTO.class, DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter2.convert(ausloraSensor.getId(), ausloraSensorData));
+			lt100hSensorData = rm.activateResource(ausloraSensor.getId(), null, LT100HSensorDataDTO.class,
+					DeviceExecutorMethodTypeEnum.GET);
+			returnVal.add(converter2.convert(ausloraSensor.getId(), lt100hSensorData));
 		}
 
 		return returnVal;

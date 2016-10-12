@@ -9,12 +9,10 @@
 -runtrace: true
 
 -runbundles: \
-	com.easyiot.auslora.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.heatmap.application;version=snapshot,\
-	com.easyiot.lora.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.springsource.org.json;version='[1.0.0,1.0.1)',\
@@ -52,4 +50,6 @@
 	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)',\
 	osgi.enroute.webconsole.xray.provider;version='[2.0.0,2.0.1)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)'
+	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.development.board1.device.provider;version='[1.0.0,1.0.1)'

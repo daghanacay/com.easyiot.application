@@ -36,11 +36,11 @@ public class HeatmapApplication implements REST {
 	private DeviceExecutorService rm;
 
 	// List of lora sensors see configuration/configuration.json
-	@Reference(target = "(service.factoryPid=com.easyiot.device.lora.device)")
-	volatile List<Device> loraSensors;
+	@Reference(target = "(service.factoryPid=com.easyiot.development.board1.device)")
+	volatile List<Device> devBoardSensors;
 
-	@Reference(target = "(service.factoryPid=com.easyiot.auslora.device)")
-	volatile List<Device> ausloraSensors;
+	@Reference(target = "(service.factoryPid=com.easyiot.LT100H.device)")
+	volatile List<Device> lt100hSensors;
 
 	private DevelopmentBoardSensorDataConverter converter = new DevelopmentBoardSensorDataConverter();
 	private LT100HSensorConverter converter2 = new LT100HSensorConverter();
@@ -48,17 +48,19 @@ public class HeatmapApplication implements REST {
 	public List<AppSensorDataDTO> getSensorData()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
 		List<AppSensorDataDTO> returnVal = new ArrayList<>();
+		
 		DevelopmentBoard1DeviceDataDTO devBoardSensorData;
-		for (Device loraSensor : loraSensors) {
-			devBoardSensorData = rm.activateResource(loraSensor.getId(), null, DevelopmentBoard1DeviceDataDTO.class,
+		for (Device devBoardSensor : devBoardSensors) {
+			devBoardSensorData = rm.activateResource(devBoardSensor.getId(), null, DevelopmentBoard1DeviceDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter.convert(loraSensor.getId(), devBoardSensorData));
+			returnVal.add(converter.convert(devBoardSensor.getId(), devBoardSensorData));
 		}
+		
 		LT100HSensorDataDTO lt100hSensorData;
-		for (Device ausloraSensor : ausloraSensors) {
-			lt100hSensorData = rm.activateResource(ausloraSensor.getId(), null, LT100HSensorDataDTO.class,
+		for (Device lt100hSensor : lt100hSensors) {
+			lt100hSensorData = rm.activateResource(lt100hSensor.getId(), null, LT100HSensorDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
-			returnVal.add(converter2.convert(ausloraSensor.getId(), lt100hSensorData));
+			returnVal.add(converter2.convert(lt100hSensor.getId(), lt100hSensorData));
 		}
 
 		return returnVal;

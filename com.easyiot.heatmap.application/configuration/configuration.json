@@ -12,7 +12,7 @@
      "service.factoryPid":"com.easyiot.development.board1.device",
      "service.pid":"apid.sensor1",
      "id":"device.development.board.1",
-     "auslorawsProtocolReference.target":"(id=real.auslora.wss)",
+     "ausloraServerId":"real.auslora.wss",
      "applicationId":"BE01000C",
   	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
   	 "deviceEUI":"000DB531176F3557"

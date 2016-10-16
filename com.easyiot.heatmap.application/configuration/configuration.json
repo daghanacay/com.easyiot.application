@@ -7,7 +7,7 @@
      "applicationId":"BE01000C",
   	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
   	 "deviceEUI":"000DB5311773356B",
-  	 "mqttProtocolReference.target" : "(id=lora.staging.mqtt)",
+  	 "mqttProtocolReference.target" : "(id=ttn.staging.mqtt)",
      "subscriptionChannel":"70B3D57ED0000185/devices/0000000011223344/up",
      "publishChannel":"70B3D57ED0000185/devices/0000000011223344/up"
   },
@@ -30,7 +30,7 @@
   {
      "service.factoryPid":"com.easyiot.mqtt.protocol.provider",
      "service.pid":"mqtt.pid",
-     "id":"lora.staging.mqtt",
+     "id":"ttn.staging.mqtt",
      "host":"staging.thethingsnetwork.org",
      "port":"1883",
      "username":"70B3D57ED0000185",

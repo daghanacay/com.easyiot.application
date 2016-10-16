@@ -28,7 +28,7 @@
      "port":"80"
   },
   {
-     "service.factoryPid":"com.easyiot.mqtt.protocol.provider",
+     "service.factoryPid":"com.easyiot.ttn-mqtt.protocol",
      "service.pid":"mqtt.pid",
      "id":"ttn.staging.mqtt",
      "host":"staging.thethingsnetwork.org",

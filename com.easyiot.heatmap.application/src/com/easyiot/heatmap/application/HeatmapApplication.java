@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.log.LogService;
 
 import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
 import com.easyiot.base.api.Device;
@@ -35,6 +36,9 @@ public class HeatmapApplication implements REST {
 	@Reference
 	private DeviceExecutorService rm;
 
+	@Reference
+	private LogService logService;
+
 	// List of lora sensors see configuration/configuration.json
 	@Reference(target = "(service.factoryPid=com.easyiot.development.board1.device)")
 	volatile List<Device> devBoardSensors;
@@ -48,21 +52,21 @@ public class HeatmapApplication implements REST {
 	public List<AppSensorDataDTO> getSensorData()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
 		List<AppSensorDataDTO> returnVal = new ArrayList<>();
-		
+
 		DevelopmentBoard1DeviceDataDTO devBoardSensorData;
 		for (Device devBoardSensor : devBoardSensors) {
 			devBoardSensorData = rm.activateResource(devBoardSensor.getId(), null, DevelopmentBoard1DeviceDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
 			returnVal.add(converter.convert(devBoardSensor.getId(), devBoardSensorData));
 		}
-		
+
 		LT100HSensorDataDTO lt100hSensorData;
 		for (Device lt100hSensor : lt100hSensors) {
 			lt100hSensorData = rm.activateResource(lt100hSensor.getId(), null, LT100HSensorDataDTO.class,
 					DeviceExecutorMethodTypeEnum.GET);
 			returnVal.add(converter2.convert(lt100hSensor.getId(), lt100hSensorData));
 		}
-
+		logService.log(LogService.LOG_DEBUG, "Return from sensor data.");
 		return returnVal;
 	}
 

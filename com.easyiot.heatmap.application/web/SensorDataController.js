@@ -10,7 +10,7 @@ app.controller("SensorDataController", [ '$scope', function($scope) {
 	    m1 : {
 		lat : sensorData.latitude,
 		lng : sensorData.longitude,
-		message : 'IEU val: ' + JSON.parse(sensorData.metadata.notes).gateway_eui
+		message : sensorData.metadata.notes
 	    }
 	};
 

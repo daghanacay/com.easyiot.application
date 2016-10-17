@@ -6,10 +6,7 @@
      "ausloraServerId":"real.auslora.wss",
      "applicationId":"BE01000C",
   	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
-  	 "deviceEUI":"000DB5311773356B",
-  	 "mqttProtocolReference.target" : "(id=ttn.staging.mqtt)",
-     "subscriptionChannel":"70B3D57ED0000185/devices/0000000011223344/up",
-     "publishChannel":"70B3D57ED0000185/devices/0000000011223344/up"
+  	 "deviceEUI":"000DB5311773356B"
   },
   {
      "service.factoryPid":"com.easyiot.development.board1.device",
@@ -18,7 +15,10 @@
      "ausloraServerId":"real.auslora.wss",
      "applicationId":"BE01000C",
   	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
-  	 "deviceEUI":"000DB531176F3557"
+  	 "deviceEUI":"000DB531176F3557",
+  	 "mqttProtocolReference.target" : "(id=ttn.staging.mqtt)",
+     "subscriptionChannel":"70B3D57ED0000185/devices/0000000001774B22/up",
+     "publishChannel":"70B3D57ED0000185/devices/0000000001774B22/up"
   },
   {
      "service.factoryPid":"com.easyiot.auslora-websocket.protocol",

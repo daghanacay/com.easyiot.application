@@ -1,7 +1,9 @@
 package com.easyiot.heatmap.application.dto.converter;
 
 import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
+import com.easyiot.development.board1.device.api.dto.DevelopmentBoard1DeviceDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
+import com.easyiot.heatmap.application.dto.AppSensorMetadataDTO;
 
 public class LT100HSensorConverter {
 	public AppSensorDataDTO convert(String name, LT100HSensorDataDTO lt100hSensorDevice) {
@@ -15,6 +17,7 @@ public class LT100HSensorConverter {
 
 		returnval.temperature = 50;
 		returnval.sensorNormalized = .5;
+		returnval.metadata = createMetaData(lt100hSensorDevice);
 		return returnval;
 	}
 
@@ -47,6 +50,13 @@ public class LT100HSensorConverter {
 			System.err.println("corrupted data");
 		}
 
+		return returnVal;
+	}
+
+	private AppSensorMetadataDTO createMetaData(LT100HSensorDataDTO sensorDto) {
+		AppSensorMetadataDTO returnVal = new AppSensorMetadataDTO();
+		returnVal.notes = String.format("Network name: %s, Gateway EUI: %s", sensorDto.metadata.networkName,
+				sensorDto.metadata.gateway_eui);
 		return returnVal;
 	}
 

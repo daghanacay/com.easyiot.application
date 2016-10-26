@@ -52,4 +52,5 @@
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.development.board1.device.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.LT100H.device.provider;version='[1.0.1,1.0.2)'
+	com.easyiot.LT100H.device.provider;version='[1.0.1,1.0.2)',\
+	com.easyiot.base.configuration.admin.provider;version='[1.0.0,1.0.1)'

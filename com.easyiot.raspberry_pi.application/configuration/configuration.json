@@ -1,0 +1,21 @@
+[
+  {
+  	"service.pid" : "com.daghan.heatmap",
+  	"start" : "START",
+  	"frequency" : "100"
+  },
+  {
+     "service.factoryPid" : "com.easyiot.color3led.device",
+     "service.pid" : "color3led",
+     "id":"discoDevice.1",
+     "gpioProtocolReference.target" : "(id=gpio1)",
+     "bluePin" : "pin23",
+     "greenPin" : "pin24",
+     "redPin" : "pin25",
+  },
+  {
+     "service.factoryPid" : "com.easyiot.gpio.protocol",
+     "service.pid" : "gpioProtocol",
+     "id":"gpio1"
+  }
+]

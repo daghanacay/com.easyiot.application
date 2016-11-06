@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.api.exception.NoSuchDeviceException;
+import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.color3led.device.api.capability.Color3LedCapability.RequireColor3LedDevice;
 import com.easyiot.color3led.device.api.dto.ColorDtoFactory;
@@ -35,7 +36,7 @@ import osgi.enroute.configurer.api.RequireConfigurerExtender;
 	int frequency() default 100;
 
 }
-
+@RequireDeviceRest
 @RequireConfigurerExtender
 @RequireColor3LedDevice(versionStr = "1.0.0")
 @Component(name = "com.daghan.heatmap", configurationPolicy = ConfigurationPolicy.REQUIRE)

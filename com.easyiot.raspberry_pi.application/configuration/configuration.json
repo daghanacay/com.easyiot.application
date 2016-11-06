@@ -9,9 +9,9 @@
      "service.pid" : "color3led",
      "id":"discoDevice.1",
      "gpioProtocolReference.target" : "(id=gpio1)",
-     "bluePin" : "pin23",
+     "redPin" : "pin23",
      "greenPin" : "pin24",
-     "redPin" : "pin25",
+     "bluePin" : "pin25"
   },
   {
      "service.factoryPid" : "com.easyiot.gpio.protocol",

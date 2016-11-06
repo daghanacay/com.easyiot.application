@@ -41,4 +41,7 @@
 	osgi.enroute.iot.circuit.provider;version='[2.0.1,2.0.2)',\
 	osgi.enroute.iot.pi.provider;version='[1.0.2,1.0.3)',\
 	osgi.enroute.scheduler.simple.provider;version='[1.1.1,1.1.2)',\
-	osgi.enroute.configurer.simple.provider;version='[1.2.2,1.2.3)'
+	osgi.enroute.configurer.simple.provider;version='[1.2.2,1.2.3)',\
+	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
+	org.knopflerfish.bundle.useradmin;version='[4.1.1,4.1.2)'

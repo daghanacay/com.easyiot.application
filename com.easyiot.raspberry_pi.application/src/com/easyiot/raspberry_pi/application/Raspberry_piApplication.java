@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
-import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
+import com.easyiot.base.api.exception.NoSuchDeviceException;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.color3led.device.api.capability.Color3LedCapability.RequireColor3LedDevice;
 import com.easyiot.color3led.device.api.dto.ColorDtoFactory;
@@ -27,7 +27,9 @@ import osgi.enroute.configurer.api.RequireConfigurerExtender;
 @ObjectClassDefinition(name = "Disco ball configuration")
 @interface DiscoballConfig {
 	@AttributeDefinition(name = "Stop/Start", description = "Stops or start the disco ball.")
-	StartStopEnum start() default StartStopEnum.START;
+	StartStopEnum start()
+
+	default StartStopEnum.START;
 
 	@AttributeDefinition(name = "Frequency", description = "Frequency in milliseconds.", required = true, min = "100")
 	int frequency() default 100;
@@ -71,12 +73,8 @@ public class Raspberry_piApplication {
 			break;
 		case STOP:
 			runThread = false;
-			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-					DeviceExecutorMethodTypeEnum.POST);
-			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-					DeviceExecutorMethodTypeEnum.POST);
-			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-					DeviceExecutorMethodTypeEnum.POST);
+			turnOffLedsDisco();
+			s_logger.info("stopping now");
 			break;
 		}
 	}
@@ -84,14 +82,28 @@ public class Raspberry_piApplication {
 	@Deactivate
 	public void deactivate()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-		runThread = false;
-		rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-				DeviceExecutorMethodTypeEnum.POST);
-		rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-				DeviceExecutorMethodTypeEnum.POST);
-		rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
-				DeviceExecutorMethodTypeEnum.POST);
-		s_logger.info("stopping now");
+		// Only stop the thread if this is a proper de-activation due to stopping
+		// the bundle but not due to unsuccessful binding
+		if (_threeColorDevice != null) {
+			runThread = false;
+		}
+		turnOffLedsDisco();
+		s_logger.info("deactivated.");
+	}
+
+	private void turnOffLedsDisco() throws NoSuchMethodException {
+		// Ignore if resource manager cannot find the device to run
+		try {
+			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
+					DeviceExecutorMethodTypeEnum.POST);
+			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
+					DeviceExecutorMethodTypeEnum.POST);
+			rm.activateResource(_threeColorDevice.getId(), ColorDtoFactory.NO_COLOR, Void.TYPE,
+					DeviceExecutorMethodTypeEnum.POST);
+		} catch (NoSuchDeviceException | NullPointerException e) {
+			// Do nothing
+			e.printStackTrace();
+		}
 	}
 
 	private class DiscoThread extends Thread {
@@ -103,8 +115,10 @@ public class Raspberry_piApplication {
 
 				try {
 					updateColor(colorScheme);
+					Thread.sleep(config.frequency());
 				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
-						| NoSuchMethodException | InterruptedException e) {
+						| NoSuchMethodException | InterruptedException | NoSuchDeviceException e) {
+					// Do nothing
 					e.printStackTrace();
 				}
 
@@ -131,7 +145,6 @@ public class Raspberry_piApplication {
 						DeviceExecutorMethodTypeEnum.POST);
 				break;
 			}
-			Thread.sleep(config.frequency());
 		}
 	}
 }

@@ -33,7 +33,7 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 @RequireWebServerExtender
 @RequireConfigurerExtender
 @RequireConfigurationManagement
-@Component(name = "com.daghan.heatmap")
+@Component(name = "com.easyiot.heatmap")
 public class HeatmapApplication implements REST {
 	@Reference
 	private DeviceExecutorService rm;

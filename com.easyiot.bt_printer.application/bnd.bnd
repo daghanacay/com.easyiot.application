@@ -1,0 +1,26 @@
+#
+#  APPLICATION
+#
+
+Bundle-Version: 1.0.0.${tstamp}
+Bundle-Description: \
+	Bundle for bluetooth printer application. Command only. Runs on Raspberry pi and local computer with bleutooth dongle.
+
+Private-Package:  \
+	com.easyiot.bt_printer.application
+
+EnRoute-Application: 	com.easyiot.bt_printer
+JPM-Command:			bt_prnt
+
+-includeresource: \
+	{readme.md}, \
+	{configuration=configuration}
+
+-buildpath: \
+	osgi.enroute.base.api,\
+	com.easyiot.base.api,\
+	com.easyiot.ZJ_580.bt_printer.device.api,\
+	com.easyiot.ZJ_580.bt_printer.device.provider
+	
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12

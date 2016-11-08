@@ -39,7 +39,7 @@ import osgi.enroute.configurer.api.RequireConfigurerExtender;
 @RequireDeviceRest
 @RequireConfigurerExtender
 @RequireColor3LedDevice(versionStr = "1.0.0")
-@Component(name = "com.daghan.heatmap", configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(name = "com.easyiot.raspberry_pi", configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = DiscoballConfig.class)
 public class Raspberry_piApplication {
 	public enum StartStopEnum {

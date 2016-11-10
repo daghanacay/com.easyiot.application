@@ -55,8 +55,8 @@ public class LT100HSensorConverter {
 
 	private AppSensorMetadataDTO createMetaData(LT100HSensorDataDTO sensorDto) {
 		AppSensorMetadataDTO returnVal = new AppSensorMetadataDTO();
-		returnVal.notes = String.format("Network name: %s, Gateway EUI: %s", sensorDto.metadata.networkName,
-				sensorDto.metadata.gateway_eui);
+		returnVal.notes = String.format("Network name: %s, Gateway EUI: %s", sensorDto.metadata!=null?sensorDto.metadata.networkName:"N/A",
+				sensorDto.metadata!=null?sensorDto.metadata.gateway_eui:"N/A");
 		return returnVal;
 	}
 

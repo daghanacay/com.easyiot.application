@@ -8,9 +8,7 @@ import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.Designate;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,31 +19,16 @@ import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.color3led.device.api.capability.Color3LedCapability.RequireColor3LedDevice;
 import com.easyiot.color3led.device.api.dto.ColorDtoFactory;
-import com.easyiot.raspberry_pi.application.Raspberry_piApplication.StartStopEnum;
+import com.easyiot.raspberry_pi.application.config.DiscoballConfig;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
-@ObjectClassDefinition(name = "Disco ball configuration")
-@interface DiscoballConfig {
-	@AttributeDefinition(name = "Stop/Start", description = "Stops or start the disco ball.")
-	StartStopEnum start()
-
-	default StartStopEnum.START;
-
-	@AttributeDefinition(name = "Frequency", description = "Frequency in milliseconds.", required = true, min = "100")
-	int frequency() default 100;
-
-}
 @RequireDeviceRest
-@RequireConfigurerExtender
 @RequireColor3LedDevice(versionStr = "1.0.0")
+@RequireConfigurerExtender
 @Component(name = "com.easyiot.raspberry_pi", configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = DiscoballConfig.class)
 public class Raspberry_piApplication {
-	public enum StartStopEnum {
-		START, STOP;
-	}
-
 	@Reference
 	private DeviceExecutorService rm;
 

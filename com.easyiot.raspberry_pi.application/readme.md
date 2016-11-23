@@ -1,5 +1,4 @@
 # 
-da
 ${Bundle-Description}
 
 ## Starting the application 
@@ -21,27 +20,6 @@ Go back to your eclipse and please change the -runremote configuration in com.ea
 		shell=-1
  
 Resolve debug.bndrun right click on it and select debug as -> BND native launcher.
-
-### Managing Application
-Find the management page at 
-
-http://[raspberry ip address]:8080/com.daghan.resource/index.html#/configurations
-
-web console at
-http://[raspberry ip address]:8080/system/console/services
-
-you can turn on/off an led using 
-POST  http://[raspberry ip address]:8080/device/discoDevice with body 
-{
-    blueValue = LOW_VALUE;
-	greenValue = LOW_VALUE;
-	redValue = LOW_VALUE;
-}
-
-you can read the values on the pins 
-GET http://[raspberry ip address]:8080/device/discoDevice
-
-See configuration for details
 
 ## Configuration
 

@@ -1,7 +1,6 @@
 package com.easyiot.heatmap.application.dto.converter;
 
 import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
-import com.easyiot.development.board1.device.api.dto.DevelopmentBoard1DeviceDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorMetadataDTO;
 

@@ -7,5 +7,5 @@ encoding//configuration/configuration.json=UTF-8
 encoding//test/.gitignore=UTF-8
 encoding/bnd.bnd=UTF-8
 encoding/com.easyiot.heatmap.bndrun=UTF-8
-encoding/debug.bndrun=UTF-8
+encoding/heatmap.debug.bndrun=UTF-8
 encoding/readme.md=UTF-8

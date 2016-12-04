@@ -17,14 +17,12 @@ import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.api.exception.NoSuchDeviceException;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.executor.DeviceExecutorService;
-import com.easyiot.color3led.device.api.capability.Color3LedCapability.RequireColor3LedDevice;
 import com.easyiot.color3led.device.api.dto.ColorDtoFactory;
 import com.easyiot.raspberry_pi.application.config.DiscoballConfig;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
 @RequireDeviceRest
-@RequireColor3LedDevice(versionStr = "1.0.0")
 @RequireConfigurerExtender
 @Component(name = "com.easyiot.raspberry_pi", configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = DiscoballConfig.class)

@@ -18,8 +18,17 @@ Go back to your eclipse and please change the -runremote configuration in com.ea
 		jdb=1044; \
 		host=10.1.1.9; \
 		shell=-1
- 
+
+### Changing application configuration at runtime 
+
 Resolve debug.bndrun right click on it and select debug as -> BND native launcher.
+
+Go to apache web console from https://{Raspberry_api}:8433/system/console/configMgr e.g. https://10.1.1.9:8433/system/console/configMgr 
+
+Find "Disco ball configuration" on the list and click on it. See how the leds react.
+
+
+
 
 ## Configuration
 

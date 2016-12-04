@@ -3,7 +3,6 @@ package com.easyiot.bt_printer.application;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import com.easyiot.ZJ_580.bt_printer.device.api.capability.BluetoothDeviceCapability.RequireZJ_580Device;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.api.exception.NoSuchDeviceException;
@@ -13,7 +12,6 @@ import com.easyiot.com.easyiot.ZJ_580.bt_printer.device.api.dto.ZJ_580Data;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 import osgi.enroute.debug.api.Debug;
 
-@RequireZJ_580Device
 @RequireConfigurerExtender
 @Component(service = Bt_printerApplication.class, name = "com.easyiot.bt_printer", immediate = true, property = {
 		Debug.COMMAND_SCOPE + "=printer", Debug.COMMAND_FUNCTION + "=write" })

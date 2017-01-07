@@ -9,6 +9,15 @@
   	 "deviceEUI":"000DB5311773356B"
   },
   {
+     "service.factoryPid":"com.easyiot.LT100H.device",
+     "service.pid":"apid.sensor1",
+     "id":"device.LT100H.2",
+     "ausloraServerId":"real.auslora.wss",
+     "applicationId":"BE01000C",
+  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
+  	 "deviceEUI":"000DB5311773356B"
+  },
+  {
      "service.factoryPid":"com.easyiot.development.board1.device",
      "service.pid":"apid.sensor1",
      "id":"device.development.board.1",

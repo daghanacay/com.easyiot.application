@@ -39,6 +39,16 @@
 			<artifactId>com.easyiot.websocket.protocol.provider</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.easyiot</groupId>
+			<artifactId>com.easyiot.http.protocol.api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.easyiot</groupId>
+			<artifactId>com.easyiot.http.protocol.provider</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>

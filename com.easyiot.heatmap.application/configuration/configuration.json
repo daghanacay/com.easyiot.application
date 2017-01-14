@@ -47,7 +47,7 @@
   },
   {
      "service.factoryPid":"com.easyiot.auslora-websocket.device.service",
-     "service.pid":"websocket-device.service",
+     "service.pid":"local.auslora",
      "adminUrl":"adm.auslora.com.au",
      "apiKey":"AAAAEwz95eTEvbdkuxYEvxyLZBQQSTpeqwn3so8HT9os0XJDc"
   }    

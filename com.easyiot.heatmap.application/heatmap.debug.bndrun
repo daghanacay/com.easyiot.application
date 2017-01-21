@@ -10,7 +10,6 @@
 
 -runbundles: \
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.heatmap.application;version=snapshot,\
 	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)',\
 	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
@@ -60,4 +59,5 @@
 	slf4j.api;version='[1.7.7,1.7.8)',\
 	slf4j.log4j12;version='[1.6.1,1.6.2)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.1.0,1.1.1)',\
-	log4j;version='[1.2.17,1.2.18)'
+	log4j;version='[1.2.17,1.2.18)',\
+	com.easyiot.heatmap.application;version='[1.0.0,1.0.1)'

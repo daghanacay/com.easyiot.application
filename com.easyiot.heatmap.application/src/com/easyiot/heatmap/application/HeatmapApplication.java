@@ -11,7 +11,7 @@ import org.osgi.service.log.LogService;
 import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
-import com.easyiot.base.capability.ConfigurationManagement.RequireConfigurationManagement;
+import com.easyiot.base.capability.ConfigurationManagementApplication.RequireConfigurationManagementApplication;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.capability.WebSecurity.RequireWebSecurity;
 import com.easyiot.base.executor.DeviceExecutorService;
@@ -32,7 +32,7 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender
 @RequireConfigurerExtender
-@RequireConfigurationManagement
+@RequireConfigurationManagementApplication
 @Component(name = "com.easyiot.heatmap")
 public class HeatmapApplication implements REST {
 	@Reference

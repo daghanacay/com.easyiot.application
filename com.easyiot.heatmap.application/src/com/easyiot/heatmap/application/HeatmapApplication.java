@@ -26,8 +26,8 @@ import osgi.enroute.rest.api.REST;
 import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
-@RequireDeviceRest(versionStr = "1.0.0")
-@RequireWebSecurity(versionStr = "1.0.0")
+@RequireDeviceRest(version = "1.0.0")
+@RequireWebSecurity(version = "1.0.0")
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender

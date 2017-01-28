@@ -60,4 +60,5 @@
 	slf4j.log4j12;version='[1.6.1,1.6.2)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.1.0,1.1.1)',\
 	log4j;version='[1.2.17,1.2.18)',\
-	com.easyiot.heatmap.application;version='[1.0.0,1.0.1)'
+	com.easyiot.base.configuration.admin.application;version='[1.0.0,1.0.1)',\
+	com.easyiot.heatmap.application;version=snapshot

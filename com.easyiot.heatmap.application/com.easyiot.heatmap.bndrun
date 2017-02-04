@@ -45,7 +45,6 @@ JPM-Command:					heatmap
 	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
 	org.knopflerfish.bundle.useradmin;version='[4.1.1,4.1.2)',\
 	com.easyiot.bluetooth.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.ZJ_580.bt_printer.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.1.0,1.1.1)',\
 	com.easyiot.base.configuration.admin.application;version='[1.0.0,1.0.1)',\
 	com.easyiot.http.protocol.provider;version='[1.0.0,1.0.1)',\

@@ -50,5 +50,25 @@
      "service.pid":"local.auslora",
      "adminUrl":"adm.auslora.com.au",
      "apiKey":"AAAAEwz95eTEvbdkuxYEvxyLZBQQSTpeqwn3so8HT9os0XJDc"
-  }    
+  },
+  {
+     "service.pid":"org.apache.felix.http",
+     "org.apache.felix.http.enable":"true",
+     "org.osgi.service.http.port":"8080",
+     "org.apache.felix.https.enable":"false",
+     "org.osgi.service.http.port.secure":"8433",
+     "org.apache.felix.https.keystore":"configuration/ssl/keystore.jks",
+     "org.apache.felix.https.keystore.password":"da_iot",
+     "org.apache.felix.https.keystore.key.password":"da_iot",
+     "org.apache.felix.https.truststore":"configuration/ssl/cacerts.jks",
+     "org.apache.felix.https.truststore.type":"jks"
+  },
+  {
+	"service.pid":"com.easyiot.security",
+	"authenticationType":"CONFIGURATION",
+	"users" : "[{\"name\":\"daghan\",\"password\":\"daghan\"},{\"name\":\"pinar\",\"password\":\"pinar\"}]",
+	"groups": "[{\"name\":\"admin\",\"user_names\":[\"daghan\"]},{\"name\":\"authenticated\",\"user_names\":[\"daghan\",\"pinar\"]}]",
+	"permissions": "[{\"name\":\"readDevice\",\"group_names\":[\"admin\",\"authenticated\"]},{\"name\":\"writeDevice\",\"group_names\":[\"admin\"]}]"
+  }
+      
 ]

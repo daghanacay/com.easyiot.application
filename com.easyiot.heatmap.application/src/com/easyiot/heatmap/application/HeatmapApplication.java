@@ -11,9 +11,9 @@ import org.osgi.service.log.LogService;
 import com.easyiot.LT100H.device.api.dto.LT100HSensorDataDTO;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
+import com.easyiot.base.capability.AuthenticationAuthorization.RequireAuthenticationAuthorization;
 import com.easyiot.base.capability.ConfigurationManagementApplication.RequireConfigurationManagementApplication;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
-import com.easyiot.base.capability.WebSecurity.RequireWebSecurity;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.development.board1.device.api.dto.DevelopmentBoard1DeviceDataDTO;
 import com.easyiot.heatmap.application.dto.AppSensorDataDTO;
@@ -27,7 +27,7 @@ import osgi.enroute.twitter.bootstrap.capabilities.RequireBootstrapWebResource;
 import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
 @RequireDeviceRest(version = "1.0.0")
-@RequireWebSecurity(version = "1.0.0")
+@RequireAuthenticationAuthorization(version = "1.0.0")
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender

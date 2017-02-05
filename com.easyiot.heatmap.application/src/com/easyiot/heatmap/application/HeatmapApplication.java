@@ -28,11 +28,11 @@ import osgi.enroute.webserver.capabilities.RequireWebServerExtender;
 
 @RequireDeviceRest(version = "1.0.0")
 @RequireAuthenticationAuthorization(version = "1.0.0")
+@RequireConfigurationManagementApplication(version = "1.0.0")
 @RequireAngularWebResource(resource = { "angular.js", "angular-resource.js", "angular-route.js" }, priority = 1000)
 @RequireBootstrapWebResource(resource = "css/bootstrap.css")
 @RequireWebServerExtender
 @RequireConfigurerExtender
-@RequireConfigurationManagementApplication
 @Component(name = "com.easyiot.heatmap")
 public class HeatmapApplication implements REST {
 	@Reference

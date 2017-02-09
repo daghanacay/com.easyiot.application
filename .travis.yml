@@ -10,7 +10,7 @@ jdk:
 
 install: ./gradlew --version
 
-script: ./gradlew export
+script: ./gradlew clean release build export
 
 after_success:
  - cd com.easyiot.heatmap.application

@@ -9,6 +9,11 @@
 		name=EasyCoreMaven; \
 		location=${build}/cache/EasyCoreMaven.xml
 		
+-plugin.3.easyiot.core = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Core; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.core/master/cnf/release/index.xml
+		
 -plugin.2.easyiot.protocol = \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/groups/osgi; \
@@ -16,6 +21,12 @@
 		pom=${build}/EasyProtocolImplMaven.xml; \
 		name=EasyProtocolImplMaven; \
 		location=${build}/cache/EasyProtocolImplMaven.xml
+		
+-plugin.3.easyiot.protocol = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Protocol; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.protocol/master/cnf/release/index.xml
+		
 
 -plugin.2.easyiot.device = \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
@@ -24,3 +35,9 @@
 		pom=${build}/EasyDeviceMaven.xml; \
 		name=EasyDeviceMaven; \
 		location=${build}/cache/EasyDeviceMaven.xml
+		
+-plugin.3.easyiot.device = \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+	        name		=       EasyIot-Device; \
+	        locations	=       https://raw.githubusercontent.com/daghanacay/com.easyiot.device/master/cnf/release/index.xml
+

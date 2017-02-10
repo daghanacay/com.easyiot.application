@@ -19,6 +19,7 @@ after_success:
  - cd com.easyiot.heatmap.application
  - pwd
  - cp -r configuration generated/distributions/executable/
+ - cp -r Dockerfile generated/distributions/executable/
  - cd generated/distributions/executable/
  - ls
  - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD

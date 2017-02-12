@@ -25,6 +25,10 @@ after_success:
  - docker build -t $REPO:$COMMIT .
  - docker push $REPO:$COMMIT
 
+before_deploy:
+ - pwd
+ - ls
+
 # https://github.com/travis-ci/dpl#elastic-beanstalk
 # https://docs.travis-ci.com/user/deployment
 deploy:

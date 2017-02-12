@@ -32,7 +32,7 @@ deploy:
       edge: true
       skip_cleanup: true
       app: heat-map # Elastic Beanstalk app name
-      env: heat-map-dev # Elastic Beanstalk env name
+      env: Sample-env # Elastic Beanstalk env name
       bucket_name: heat-map-s3-bucket # S3 bucket used by Elastic Beanstalk
       region: ap-southeast-2
       access_key_id: $AWS_BEANSTALK_ID

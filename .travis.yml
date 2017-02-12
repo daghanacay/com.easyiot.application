@@ -26,8 +26,9 @@ after_success:
  - docker push $REPO:$COMMIT
 
 before_deploy:
- - pwd
- - ls
+ - zip -r latest *
+ - mkdir -p dpl_cd_upload
+ - mv latest.zip dpl_cd_upload/latest.zip
 
 # https://github.com/travis-ci/dpl#elastic-beanstalk
 # https://docs.travis-ci.com/user/deployment
@@ -35,6 +36,7 @@ deploy:
  - provider: elasticbeanstalk
    edge: true
    skip_cleanup: true
+   zip-file: 'dpl_cd_upload/latest.zip'
    app: heat-map # Elastic Beanstalk app name
    env: Sample-env # Elastic Beanstalk env name
    bucket_name: heat-map-s3-bucket # S3 bucket used by Elastic Beanstalk

@@ -35,7 +35,6 @@
 	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)',\
 	slf4j.log4j12;version='[1.6.1,1.6.2)',\
-	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.1.0,1.1.1)',\
 	com.easyiot.base.configuration.admin.application;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.configuration.admin.provider;version='[1.0.0,1.0.1)',\
@@ -61,4 +60,6 @@
 	osgi.enroute.google.angular.webresource;version='[1.5.7,1.5.8)',\
 	osgi.enroute.rest.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
-	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)'
+	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
+	com.easyiot.LT100H.device.provider;version='[1.0.1,1.0.2)',\
+	com.easyiot.ZJ_580.bt_printer.device.provider;version='[1.0.0,1.0.1)'

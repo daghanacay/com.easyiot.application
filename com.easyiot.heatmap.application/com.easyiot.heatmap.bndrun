@@ -30,7 +30,6 @@ JPM-Command:					heatmap
 	com.easyiot.base.configuration.admin.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.development.board1.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)',\
 	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
 	org.apache.felix.http.jetty;version='[3.2.0,3.2.1)',\
 	org.apache.felix.scr;version='[2.0.2,2.0.3)',\
@@ -52,6 +51,8 @@ JPM-Command:					heatmap
 	org.apache.commons.codec;version='[1.10.0,1.10.1)',\
 	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)',\
-	slf4j.log4j12;version='[1.6.1,1.6.2)'
+	slf4j.log4j12;version='[1.6.1,1.6.2)',\
+	com.easyiot.LT100H.device.provider;version='[1.0.1,1.0.2)',\
+	com.easyiot.ZJ_580.bt_printer.device.provider;version='[1.0.0,1.0.1)'
 -runrequires: osgi.identity;filter:='(osgi.identity=com.easyiot.heatmap.application)'
 -runee: JavaSE-1.8

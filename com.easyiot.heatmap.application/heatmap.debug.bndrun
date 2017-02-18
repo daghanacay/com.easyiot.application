@@ -4,9 +4,6 @@
 
 -include: ~com.easyiot.heatmap.bndrun
 
--runrequires.debug:  ${debug-bundles}
-
--runtrace: true
 
 -runbundles: \
 	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\

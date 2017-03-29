@@ -13,8 +13,6 @@ JPM-Command:					heatmap
 -runrequires: osgi.identity;filter:='(osgi.identity=com.easyiot.heatmap.application)'
 -runee: JavaSE-1.8
 -runbundles: \
-	com.easyiot.LT100H.device.provider;version='[1.0.1,1.0.2)',\
-	com.easyiot.ZJ_580.bt_printer.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.auslora-websocket.protocol.provider;version='[1.1.0,1.1.1)',\
 	com.easyiot.base.configuration.admin.application;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.configuration.admin.provider;version='[1.0.0,1.0.1)',\
@@ -28,7 +26,6 @@ JPM-Command:					heatmap
 	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)',\
-	log4j;version='[1.2.17,1.2.18)',\
 	org.apache.commons.codec;version='[1.10.0,1.10.1)',\
 	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
 	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
@@ -54,4 +51,6 @@ JPM-Command:					heatmap
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
 	osgi.enroute.web.simple.provider;version='[2.0.0,2.0.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)',\
-	slf4j.log4j12;version='[1.6.1,1.6.2)'
+	slf4j.log4j12;version='[1.6.1,1.6.2)',\
+	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)',\
+	log4j;version='[1.2.17,1.2.18)'

@@ -3,7 +3,8 @@
     "service.factoryPid" : "com.easyiot.ZJ_580.device",
     "service.pid" : "ZJ_580device",
     "id" : "ZJ_580.1",
-    "sppServiceNumber" : "2"
+    "sppServiceNumber" : "2",
+    "bluetoothProtocolReference.target":"(id=btprotocol.1)";
   },
   {
     "service.factoryPid" : "com.easyiot.bluetooth.protocol",

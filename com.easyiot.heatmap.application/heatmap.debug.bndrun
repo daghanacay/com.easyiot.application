@@ -3,7 +3,9 @@
 #
 
 -include: ~com.easyiot.heatmap.bndrun
+-runrequires.debug:  ${debug-bundles}
 
+-runtrace: true
 
 -runbundles: \
 	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
@@ -46,4 +48,16 @@
 	osgi.enroute.rest.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
 	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)'
+	com.easyiot.LT100H.device.provider;version='[1.0.0,1.0.1)',\
+	json;version='[20160212.0.0,20160212.0.1)',\
+	org.apache.commons.fileupload;version='[1.3.2,1.3.3)',\
+	org.apache.commons.io;version='[2.5.0,2.5.1)',\
+	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
+	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
+	org.apache.felix.log;version='[1.0.1,1.0.2)',\
+	org.apache.felix.webconsole;version='[4.2.16,4.2.17)',\
+	org.osgi.compendium;version='[4.1.0,4.1.1)',\
+	osgi.enroute.base.debug.provider;version='[2.0.0,2.0.1)',\
+	osgi.enroute.bostock.d3.webresource;version='[3.5.6,3.5.7)',\
+	osgi.enroute.gogo.shell.provider;version='[2.0.0,2.0.1)',\
+	osgi.enroute.webconsole.xray.provider;version='[2.0.0,2.0.1)'

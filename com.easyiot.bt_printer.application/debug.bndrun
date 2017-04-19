@@ -35,12 +35,13 @@
 	osgi.enroute.configurer.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.executor.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.gogo.shell.provider;version='[2.0.0,2.0.1)',\
-	osgi.enroute.logger.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.web.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.dtos.bndlib.provider;version='[2.0.0,2.0.1)',\
 	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
 	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
 	org.knopflerfish.bundle.useradmin;version='[4.1.1,4.1.2)',\
 	com.easyiot.base.configuration.admin.provider;version='[1.0.0,1.0.1)',\
-	osgi.enroute.rest.simple.provider;version='[2.0.0,2.0.1)'
+	osgi.enroute.rest.simple.provider;version='[2.0.0,2.0.1)',\
+	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
+	slf4j.api;version='[1.7.7,1.7.8)',\
+	slf4j.log4j12;version='[1.6.1,1.6.2)'

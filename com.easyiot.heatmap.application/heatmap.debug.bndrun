@@ -31,8 +31,6 @@
 	com.easyiot.development.board1.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.heatmap.application;version=snapshot,\
 	com.easyiot.http.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.websocket.protocol.provider;version='[1.0.0,1.0.1)',\
 	org.apache.commons.codec;version='[1.10.0,1.10.1)',\
 	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
@@ -60,4 +58,6 @@
 	osgi.enroute.base.debug.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.bostock.d3.webresource;version='[3.5.6,3.5.7)',\
 	osgi.enroute.gogo.shell.provider;version='[2.0.0,2.0.1)',\
-	osgi.enroute.webconsole.xray.provider;version='[2.0.0,2.0.1)'
+	osgi.enroute.webconsole.xray.provider;version='[2.0.0,2.0.1)',\
+	com.easyiot.mqtt.protocol.provider;version='[1.1.0,1.1.1)',\
+	com.easyiot.ttn-mqtt.protocol.provider;version='[1.0.0,1.0.1)'

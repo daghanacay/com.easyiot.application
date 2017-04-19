@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>com.easyiot</groupId>
 			<artifactId>com.easyiot.mqtt.protocol.provider</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.easyiot</groupId>
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>com.easyiot</groupId>
 			<artifactId>com.easyiot.websocket.protocol.provider</artifactId>
-			<version>1.1.0-SNAPSHOT</version>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.easyiot</groupId>

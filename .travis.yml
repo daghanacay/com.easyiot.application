@@ -31,23 +31,24 @@ before_deploy:
  - mkdir -p dpl_cd_upload
  - mv latest.zip dpl_cd_upload/latest.zip
 
+# STOP deploying to AWS due to appication key issues
 # https://github.com/travis-ci/dpl#elastic-beanstalk
 # https://docs.travis-ci.com/user/deployment
-deploy:
- - provider: elasticbeanstalk
-   edge: true
-   skip_cleanup: true
-   zip-file: 'dpl_cd_upload/latest.zip'
-   app: heat-map-application # Elastic Beanstalk app name
-   env: Sample-env # Elastic Beanstalk env name
-   bucket_name: heat-map-s3-bucket # S3 bucket used by Elastic Beanstalk
-   region: ap-southeast-2
-   access_key_id: $AWS_BEANSTALK_ID
-   secret_access_key: $AWS_BEANSTALK_ACCES_KEY
-   on:
-    repo: daghanacay/com.easyiot.application
-    branch: master
+#deploy:
+# - provider: elasticbeanstalk
+#   edge: true
+#   skip_cleanup: true
+#  zip-file: 'dpl_cd_upload/latest.zip'
+#   app: heat-map-application # Elastic Beanstalk app name
+#   env: Sample-env # Elastic Beanstalk env name
+#   bucket_name: heat-map-s3-bucket # S3 bucket used by Elastic Beanstalk
+#   region: ap-southeast-2
+#   access_key_id: $AWS_BEANSTALK_ID
+#   secret_access_key: $AWS_BEANSTALK_ACCES_KEY
+#   on:
+#    repo: daghanacay/com.easyiot.application
+#    branch: master
 
-after_deploy:
- - pwd
- - ls
+#after_deploy:
+# - pwd
+# - ls

@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 import com.easyiot.base.api.Device;
 import com.easyiot.base.api.Device.DeviceExecutorMethodTypeEnum;
 import com.easyiot.base.api.exception.NoSuchDeviceException;
+import com.easyiot.base.capability.ConfigurationManagement.RequireConfigurationManagement;
+import com.easyiot.base.capability.ConfigurationManagementApplication.RequireConfigurationManagementApplication;
 import com.easyiot.base.capability.DeviceRest.RequireDeviceRest;
 import com.easyiot.base.executor.DeviceExecutorService;
 import com.easyiot.color3led.device.api.dto.ColorDtoFactory;
@@ -22,6 +24,8 @@ import com.easyiot.raspberry_pi.application.config.DiscoballConfig;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
+@RequireConfigurationManagement
+@RequireConfigurationManagementApplication
 @RequireDeviceRest
 @RequireConfigurerExtender
 @Component(name = "com.easyiot.raspberry_pi", configurationPolicy = ConfigurationPolicy.REQUIRE)
@@ -42,6 +46,12 @@ public class Raspberry_piApplication {
 	public void activate(DiscoballConfig config) {
 		this.config = config;
 		new DiscoThread().start();
+		try {
+			modified(config);
+		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Modified
@@ -64,7 +74,8 @@ public class Raspberry_piApplication {
 	@Deactivate
 	public void deactivate()
 			throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-		// Only stop the thread if this is a proper de-activation due to stopping
+		// Only stop the thread if this is a proper de-activation due to
+		// stopping
 		// the bundle but not due to unsuccessful binding
 		if (_threeColorDevice != null) {
 			runThread = false;

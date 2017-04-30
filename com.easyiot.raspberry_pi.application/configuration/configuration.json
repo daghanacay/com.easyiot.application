@@ -1,7 +1,7 @@
 [
   {
   	"service.pid" : "com.easyiot.raspberry_pi",
-  	"start" : "START",
+  	"start" : "STOP",
   	"frequency" : "100"
   },
   {

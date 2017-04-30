@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1493120532000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1493122265000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.easyiot.bt_printer.application"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="d587b928e58d580183a742d6ba6ab7a1a41ccc84d702a009fcb1d975284ba3f7"/>
+      <attribute name="osgi.content" value="5c3fcfe3e78e1cc788f72d4ba312ae500aee7740ad93f5bdd55c1f3973f7cb99"/>
       <attribute name="url" value="com.easyiot.bt_printer.application/com.easyiot.bt_printer.application-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="10066"/>
+      <attribute name="size" type="Long" value="10068"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.easyiot.bt_printer.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.easyiot.bt_printer.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="com.easyiot.bt_printer.application.Bt_printerApplication"/>
@@ -84,21 +84,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.easyiot.heatmap.application"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="42ac63246150bccaaec1d8d8fd69212b4b408ec8b8c4e59f7470e71c891399f7"/>
+      <attribute name="osgi.content" value="38fc565de2872a1521bd9b8d7394b79346b1295359011f04de35fb258ca3c449"/>
       <attribute name="url" value="com.easyiot.heatmap.application/com.easyiot.heatmap.application-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="697475"/>
+      <attribute name="size" type="Long" value="697476"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.easyiot.heatmap.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="osgi.enroute.rest.api.REST"/>
@@ -206,21 +206,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.easyiot.raspberry_pi.application"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="3af05c265b318fbf98504c0bed32a589e3d0d48844eb0d23c97771a99df2c59c"/>
+      <attribute name="osgi.content" value="25dd50942388c5eed3ca31070966d5e873d57e6ce3cc00ad25fc44aff290d7cb"/>
       <attribute name="url" value="com.easyiot.raspberry_pi.application/com.easyiot.raspberry_pi.application-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="17420"/>
+      <attribute name="size" type="Long" value="17419"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.easyiot.raspberry_pi.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.easyiot.raspberry_pi.application"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201704251142"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201704251211"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=com.easyiot.base.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>

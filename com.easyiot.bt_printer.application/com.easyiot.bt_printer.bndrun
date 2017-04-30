@@ -10,14 +10,15 @@ JPM-Command:					bt_prnt
 
 -runfw:						org.eclipse.osgi
 
--runrequires:  \
-	osgi.identity;filter:='(osgi.identity=com.easyiot.bt_printer.application)'
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=com.easyiot.bt_printer.application)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.gogo.shell.provider)'
 
 -runbundles: \
 	com.easyiot.ZJ_580.bt_printer.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.bluetooth.protocol.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.bt_printer.application;version=snapshot,\
 	org.eclipse.equinox.coordinator;version='[1.3.100,1.3.101)',\
 	org.eclipse.equinox.metatype;version='[1.4.100,1.4.101)',\
 	org.osgi.service.metatype;version='[1.3.0,1.3.1)',\
@@ -38,4 +39,12 @@ JPM-Command:					bt_prnt
 	osgi.enroute.web.simple.provider;version='[2.0.0,2.0.1)',\
 	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
 	slf4j.api;version='[1.7.7,1.7.8)',\
-	slf4j.log4j12;version='[1.6.1,1.6.2)'
+	slf4j.log4j12;version='[1.6.1,1.6.2)',\
+	log4j;version='[1.2.17,1.2.18)',\
+	com.easyiot.bt_printer.application;version=snapshot,\
+	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
+	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
+	osgi.enroute.gogo.shell.provider;version='[2.0.0,2.0.1)',\
+	com.easyiot.base.configuration.admin.application;version='[1.0.0,1.0.1)',\
+	osgi.enroute.google.angular.webresource;version='[1.5.7,1.5.8)',\
+	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)'

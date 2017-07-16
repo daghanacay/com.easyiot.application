@@ -1,55 +1,20 @@
 [
   {
-     "service.factoryPid":"com.easyiot.LT100H.device",
-     "service.pid":"apid.sensor0",
-     "id":"device.LT100H.1",
-     "ausloraServerId":"real.auslora.wss",
-     "applicationId":"BE01000C",
-  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
-  	 "deviceEUI":"000DB5311773356B"
-  },
-  {
-     "service.factoryPid":"com.easyiot.LT100H.device",
-     "service.pid":"apid.sensor1",
-     "id":"device.LT100H.2",
-     "ausloraServerId":"real.auslora.wss",
-     "applicationId":"BE01000C",
-  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
-  	 "deviceEUI":"000DB5311773356B"
-  },
-  {
-     "service.factoryPid":"com.easyiot.development.board1.device",
-     "service.pid":"apid.sensor1",
-     "id":"device.development.board.1",
-     "ausloraServerId":"real.auslora.wss",
-     "applicationId":"BE01000C",
-  	 "securityToken":"qCbvxPgM0cg0lKb80vkoug",
-  	 "deviceEUI":"000DB531176F3557",
-  	 "mqttProtocolReference.target" : "(id=ttn.staging.mqtt)",
-     "subscriptionChannel":"70B3D57ED0000185/devices/0000000001774B22/up",
-     "publishChannel":"70B3D57ED0000185/devices/0000000001774B22/up"
-  },
-  {
-     "service.factoryPid":"com.easyiot.auslora-websocket.protocol",
-     "service.pid":"auslora.wss.pid",
-     "id":"real.auslora.wss",
-     "host":"nwk.auslora.com.au",
-     "port":"80"
+     "service.factoryPid":"com.easyiot.gps_rpi.device",
+     "service.pid":"gps_rpi.sensor.1",
+     "id":"device.gps_rpi.1",
+     "mqttProtocolReference.target" : "(id=ttn.local.mqtt)",
+     "subscriptionChannel":"local-ttn-application/devices/gps-device/up",
+     "publishChannel":"local-ttn-application/devices/gps-device/down"
   },
   {
      "service.factoryPid":"com.easyiot.ttn-mqtt.protocol",
-     "service.pid":"mqtt.pid",
-     "id":"ttn.staging.mqtt",
-     "host":"staging.thethingsnetwork.org",
+     "service.pid":"mqtt.pid.no.password",
+     "id":"ttn.local.mqtt",
+     "host":"192.168.43.16",
      "port":"1883",
-     "username":"70B3D57ED0000185",
-     "userPassword":"vjGkwZGzSGSkhzMawoXv59f84oGjeYHX0mBbC1c7Yq0="
-  },
-  {
-     "service.factoryPid":"com.easyiot.auslora-websocket.device.service",
-     "service.pid":"local.auslora",
-     "adminUrl":"adm.auslora.com.au",
-     "apiKey":"AAAAEwz95eTEvbdkuxYEvxyLZBQQSTpeqwn3so8HT9os0XJDc"
+     "username":"",
+     "userPassword":""
   },
   {
      "service.pid":"org.apache.felix.http",

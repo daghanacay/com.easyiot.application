@@ -25,7 +25,10 @@ JPM-Command:			heatmap
 	osgi.enroute.base.api,\
 	com.easyiot.LT100H.device.api,\
 	com.easyiot.development.board1.device.api,\
-	com.easyiot.mqtt.protocol.provider;version=1.1
+	com.easyiot.gps_rpi.device.api,\
+	com.easyiot.gps_rpi.device.provider,\
+	com.easyiot.ttn-mqtt.protocol.provider,\
+	com.easyiot.mqtt.protocol.provider
 	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12

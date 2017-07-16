@@ -40,7 +40,6 @@
 	com.easyiot.base.device.rest.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.base.security.provider;version='[1.0.0,1.0.1)',\
-	com.easyiot.bluetooth.protocol.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.development.board1.device.provider;version='[1.0.0,1.0.1)',\
 	com.easyiot.heatmap.application;version=snapshot,\
 	com.easyiot.http.protocol.provider;version='[1.0.0,1.0.1)',\
@@ -60,4 +59,6 @@
 	osgi.enroute.google.angular.webresource;version='[1.5.7,1.5.8)',\
 	osgi.enroute.rest.simple.provider;version='[2.0.0,2.0.1)',\
 	osgi.enroute.twitter.bootstrap.webresource;version='[3.3.5,3.3.6)',\
-	log4j;version='[1.2.17,1.2.18)'
+	log4j;version='[1.2.17,1.2.18)',\
+	com.easyiot.gps_rpi.device.provider;version='[1.0.0,1.0.1)',\
+	osgi.promise;version='[6.0.0,6.0.1)'
